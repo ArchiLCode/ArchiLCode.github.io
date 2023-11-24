@@ -1,0 +1,161 @@
+.cars-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.all-card-button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+.car-item {
+  position: relative;
+  display: grid;
+  grid-template:
+    "img name price mileage" auto
+    "img desc . . " auto
+    "img . buttons buttons" auto / 25% 350px 20% auto;
+  padding: 20px;
+  width: calc(100% - 2 * 20px);
+  background: #555555;
+  height: auto;
+  border-radius: calc(2 * var(--radius));
+  align-items: center;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.car-item img {
+  grid-area: img;
+  width: 100%;
+  border-radius: var(--radius);
+  max-width: 300px;
+}
+
+.car-item h2,
+.car-item h3 {
+  margin: auto 0 auto 20px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.car-item h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.car-name {
+  grid-area: name;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.car-desc {
+  display: grid;
+  width: calc(100% - 20px);
+  margin: auto 0 auto 20px;
+  grid-template:
+    "engine engine r0-100" auto
+    "gearbox . trans" auto
+    "body . color" auto / auto auto auto;
+}
+
+.car-desc p {
+  margin: 5px 0;
+}
+
+.car-desc i {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.car-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.car-buttons i {
+  cursor: pointer;
+}
+
+.car-buttons i:hover {
+  color: white;
+}
+
+.order-button {
+  cursor: pointer;
+  background: var(--orange);
+  border-radius: var(--radius);
+  border: none;
+  width: 50%;
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .car-item {
+    font-size: 14px;
+    grid-template:
+      "img name price" auto
+      "img desc mileage" auto
+      "img . buttons" auto / 25% 280px auto;
+  }
+  .car-desc i {
+    font-size: 14px;
+  }
+  .car-item h2 {
+    font-size: 22px;
+  }
+  .car-item h3 {
+    font-size: 16px;
+  }
+  .order-button {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 26px;
+  }
+  .car-item {
+    font-size: 14px;
+    grid-template:
+      "name name" auto
+      "img img" auto
+      "desc desc" auto
+      "price mileage"
+      "buttons buttons" auto / 50% 50%;
+    row-gap: 10px;
+    max-width: 300px;
+  }
+  .car-desc {
+    grid-template:
+      "engine r0-100" auto
+      "gearbox trans" auto
+      "body color" auto / auto auto;
+  }
+  .car-item .price {
+    margin: 0 auto;
+  }
+  .car-name h2 {
+    margin: 0;
+  }
+  .car-name {
+    justify-content: center;
+  }
+  .car-item h3 {
+    margin: 0 auto;
+  }
+  .car-name h3 {
+    margin: 0;
+  }
+}
