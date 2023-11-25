@@ -25,15 +25,16 @@ burgerToggle.addEventListener("click", () => {
 
 window.onload = () => {
   main.style.opacity = "1";
+  new Swiper(".image-slider", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
 };
 
-new Swiper(".image-slider", {
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-});
+
