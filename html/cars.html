@@ -6,10 +6,13 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/cars.css" />
     <link rel="stylesheet" href="../css/icons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">    <link rel="stylesheet" href="https://gistcdn.githack.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css">
+    <link rel="manifest" href="/site.webmanifest">    
+    <link rel="stylesheet" href="https://gistcdn.githack.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <script src="../js/index.js" defer></script>
     <title>Автосалон Spirit Motors</title>
   </head>
@@ -67,8 +70,44 @@
       <div id="main" class="grid-element">
         <h1>Автомобили с пробегом</h1>
         <div class="cars-container">
+
+
+          <!-- ВАЗ 2106 -->
+
           <div class="car-item">
-            <img src="../img/zhiga.jpg" alt="">
+            <div class="slider-wrap">
+              <div class="image-slider swiper-container">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination" style></div>
+                <div class="image-slider__wrapper swiper-wrapper">
+                  <div class="image-slider__slide swiper-slide">
+                    <img class="image-slider__image" src="../img/zhiga.jpg" alt="">
+                  </div>
+                  <div class="image-slider__slide swiper-slide">
+                    <img class="image-slider__image" src="../img/zhiga2.jpg" alt="">
+                  </div>
+                  <div class="image-slider__slide swiper-slide">
+                    <img class="image-slider__image" src="../img/zhiga3.jpg" alt="">
+                  </div>
+                  <div class="image-slider__slide swiper-slide">
+                    <img class="image-slider__image" src="../img/zhiga4.jpg" alt="">
+                  </div>
+                  <div class="image-slider__slide swiper-slide">
+                    <img class="image-slider__image" src="../img/zhiga5.jpg" alt="">
+                  </div>
+                  <div class="image-slider__slide swiper-slide">
+                    <img class="image-slider__image" src="../img/zhiga6.jpg" alt="">
+                  </div>
+                  <div class="image-slider__slide swiper-slide">
+                    <img class="image-slider__image" src="../img/zhiga7.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            
             <div class="car-name">
               <h2>ВАЗ 2106</h2>
               <div class="line" style="border-color: white; height: 20px;"></div>
@@ -91,6 +130,8 @@
               <i class="fa-solid fa-cart-shopping"></i>
             </div>
           </div>
+
+
         </div>
       </div>
       <div id="footer" class="grid-element">
