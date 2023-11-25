@@ -29,10 +29,41 @@
   align-items: center;
   max-width: 1024px;
   margin: 0 auto;
+  min-width: 0;
+}
+
+.slider-wrap {
+  grid-area: img;
+}
+
+.swiper-container {
+  grid-area: img;
+  overflow: hidden;
+  border-radius: var(--radius);
+  position: relative;
+}
+
+.swiper-button-next {
+  position: absolute;
+  right: 0px !important;
+}
+
+.swiper-button-prev {
+  position: absolute;
+  left: 0px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--orange) !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: var(--orange);
+  font-size: 30px !important;
 }
 
 .car-item img {
-  grid-area: img;
   width: 100%;
   border-radius: var(--radius);
   max-width: 300px;
