@@ -13,13 +13,17 @@ burgerToggle.addEventListener("click", () => {
     burgerToggleCenter.style.visibility = "hidden";
     burgerToggleTop.style.transform = "translateY(10px) rotate(45deg)";
     burgerToggleBottom.style.transform = "translateY(-10px) rotate(-45deg)";
-    burgerNavigation.style.opacity = 1;
+    burgerNavigation.style.animation = "changeHeight 1s";
+    burgerNavigation.style.height = "calc(100vh - 80px)";
+    document.body.style.overflow = "hidden";
     return;
   }
   burgerNavigation.style.display = "none";
   burgerToggleTop.style.transform = "translateY(0px) rotate(0deg)";
   burgerToggleBottom.style.transform = "translateY(0px) rotate(0deg)";
   burgerToggleCenter.style.visibility = "visible";
+  burgerNavigation.style.height = "0";
+  document.body.style.overflow = "visible";
   burgerOpened = false;
 });
 
@@ -36,5 +40,3 @@ window.onload = () => {
     },
   });
 };
-
-
