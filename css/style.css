@@ -64,7 +64,7 @@ a:visited {
 #navigation {
   grid-area: navigation;
   position: sticky;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   background: var(--orange);
   border-bottom: 2px solid var(--backgrnd);
@@ -260,6 +260,15 @@ i {
   min-height: calc(100vh - (112px + 63px + 40px));
   opacity: 0;
   animation: changeOpacity 0.9s;
+}
+
+@keyframes changeOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .main-head {
@@ -636,20 +645,12 @@ i {
 
 #burger-nav {
   width: 100%;
-  position: relative;
-  display: none;
+  position: absolute;
+  display: block;
   background: var(--orange);
-  animation: changeHeight 0.5s;
+  transition: height 0.5s linear;
   height: 0;
-}
-
-@keyframes changeHeight {
-  from {
-    height: 0;
-  }
-  to {
-    height: calc(100vh - 80px);
-  }
+  overflow: hidden;
 }
 
 #burger-nav ul {
@@ -663,17 +664,13 @@ i {
 
 #burger-nav li {
   margin: 15px auto;
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
 }
 
-#burger-nav a:nth-last-child(n) {
+#burger-nav a:not(:last-child) {
   width: 70%;
   border-bottom: 1px solid var(--backgrnd);
-}
-
-#burger-nav a:nth-last-child(1) {
-  border-bottom: none;
 }
 
 #burger-toggle {
