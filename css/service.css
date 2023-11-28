@@ -1,0 +1,150 @@
+.service-list {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 32%);
+  width: 90%;
+  column-gap: 2%;
+  row-gap: 30px;
+  box-sizing: border-box;
+}
+
+.service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: var(--orange);
+  border-radius: 20px;
+  padding: 5px;
+  transition: scale 0.2s ease;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.service-categories {
+  position: absolute;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 0;
+  border-radius: 20px;
+  padding: 5px 10px;
+  color: #fff;
+}
+
+.service-card:hover .service-categories {
+  opacity: 1;
+  z-index: 5;
+  background: #000000b5;
+}
+
+.service-card:hover {
+  scale: 105%;
+}
+
+.service-card:hover .title {
+  opacity: 0;
+}
+
+.service-categories-list {
+  padding-inline-start: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-categories-title {
+  display: flex;
+  width: fit-content;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-bottom: 1px solid #ffffff;
+}
+
+.service-categories-list-item {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.img-container {
+  display: flex;
+  width: 100%;
+}
+
+.img-container img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  font-size: 18px;
+  margin: 10px auto;
+  text-align: center;
+  transition: all 0.5s ease;
+  opacity: 1;
+}
+
+@media (max-width: 1300px) {
+  .service-categories-title {
+    font-size: 18px;
+  }
+  .service-categories-list-item {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .service-list {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+@media (max-width: 720px) {
+  .service-list {
+    grid-template-columns: 1fr;
+  }
+  .service-categories-title {
+    font-size: 20px;
+    margin: 10px auto;
+  }
+  .service-categories-list-item {
+    font-size: 16px;
+    margin-top: 15px;
+    text-align: center;
+  }
+  .service-categories-list {
+    padding-inline-start: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .service-categories-title {
+    font-size: 18px;
+    margin: 5px auto;
+  }
+  .service-categories-list-item {
+    font-size: 13px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .service-categories-list {
+    padding-inline-start: 0;
+    margin: 0;
+  }
+  .service-list {
+    gap: 15px;
+  }
+  .title {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 26px;
+  }
+}
