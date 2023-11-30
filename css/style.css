@@ -424,11 +424,11 @@ i {
 }
 
 .order-btn {
+  text-align: center;
   font-weight: 500;
   padding: 10px;
   color: var(--backgrnd);
   background: var(--orange);
-  width: 50%;
   border: none;
   outline: none;
   border-radius: var(--radius);
@@ -539,7 +539,12 @@ i {
 .copyright {
   font-size: 18px;
   color: #b1b1b1;
-  margin: 0 0 20px 0;
+  margin: 0;
+}
+
+.developer {
+  font-size: 14px;
+  color: #b1b1b1;
 }
 
 @media (max-width: 1439px) {
@@ -821,5 +826,123 @@ i {
   }
   .about h2 {
     font-size: 20px;
+  }
+}
+
+.form-window {
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  position: fixed;
+  backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Gilroy;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.form-body {
+  width: 50%;
+  background: var(--backgrnd);
+  box-shadow: 0px 0px 25px var(--orange);
+  padding: 20px;
+  border-radius: var(--radius);
+  position: relative;
+}
+
+.login-body {
+  transform: translateY(200px);
+  transition: transform 0.5s;
+}
+
+.singup-body {
+  transform: translateY(200px);
+  transition: transform 0.5s;
+}
+
+.form-title {
+  text-align: left;
+  max-width: 80%;
+  margin: 20px auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form input {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: white;
+  outline: none;
+  width: 60%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: var(--radius);
+  transition: all 0.3s;
+}
+
+.form input:focus {
+  background: rgba(255, 255, 255, 0.222);
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+}
+
+.form-btn {
+  background: var(--orange);
+  color: var(--backgrnd);
+  border: none;
+  font-weight: 500;
+  font-size: 20px;
+  border-radius: var(--radius);
+  padding: 10px 20px;
+}
+
+.visible-password-btn {
+  position: absolute;
+  right: calc(40% - 15px);
+  top: calc((100% - 20px) / 2);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  opacity: 0.3;
+  transition: 0.2s;
+}
+
+.visible-password-btn i {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .form-body {
+    width: 80%;
+  }
+  .form input {
+    width: 80%;
+  }
+  .visible-password-btn {
+    right: calc(20% - 15px);
   }
 }
