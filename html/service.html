@@ -15,6 +15,55 @@
     <title>Автосалон Spirit Motors</title>
   </head>
   <body>
+    <div class="login-window form-window">
+      <div class="login-body form-body">
+        <h1 class="form-title">Login</h1>
+        <button id="close-login-btn" class="close-btn">
+          <i class="fa-light fa-xmark"></i>
+        </button>
+        <form action="" class="form" id="login-form">
+          <div class="inputs">
+            <input type="email" name="email" class="email" placeholder="example@mail.ru" required autocomplete="email">
+            <div style="width: 100%; position: relative; margin-bottom: 20px;">
+              <input style="margin: 0;" type="password" name="password" class="password" placeholder="Пароль" required minlength="8" maxlength="50" autocomplete="current-password">
+              <button type="button" class="visible-password-btn">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+              </button>
+            </div>          
+          </div>
+          <button class="login-btn form-btn" type="submit">Войти</button>
+          <div class="another-form">
+            <p>Нет аккаунта? <span onclick="closeLoginForm(); openSingUpForm();" id="span-registr" style="color: var(--orange); cursor: pointer;">Регестрация</span></p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="singup-window form-window">
+      <div class="singup-body form-body">
+        <h1 class="form-title">Sing Up</h1>
+        <button id="close-singup-btn" class="close-btn">
+          <i class="fa-light fa-xmark"></i>
+        </button>
+        <form action="" class="form" id="singup-form">
+          <div class="inputs">
+            <input type="text" name="name" class="name" placeholder="Имя" required autocomplete="name" pattern="^[А-Яа-яЁё]+$">
+            <input type="tel" name="tel" class="telephone" placeholder="Телефон" required autocomplete="tel" minlength="11" maxlength="11" pattern="89+[0-9]{9}">
+            <input type="email" name="email" class="email" placeholder="example@mail.ru" required autocomplete="email">
+            <div style="width: 100%; position: relative; margin-bottom: 20px;">
+              <input style="margin: 0;" type="password" name="password" class="password" placeholder="Пароль" required minlength="8" maxlength="50" autocomplete="current-password">
+              <button type="button" class="visible-password-btn">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <button class="singup-btn form-btn" type="submit">Регистрация</button>
+          <div class="another-form">
+            <p>Есть аккаунт? <span onclick="closeSingUpForm(); openLoginForm();" id="span-login" style="color: var(--orange); cursor: pointer;">Войти</span></p>
+          </div>
+        </form>
+      </div>
+    </div>
     <div class="grid-container">
       <div id="header" class="grid-element">
         <div class="logo">
@@ -60,7 +109,7 @@
             <a href="../index.html"><li class="nav-item" id="main-page">Главная</li></a>
             <a href="models.html"><li class="nav-item" id="models-page">Новые авто</li></a>
             <a href="cars.html"><li class="nav-item" id="cars-page">Авто с пробегом</li></a>
-            <a href="service.html"><li class="nav-item" id="service-page">Сервис</li></a>
+            <a href="service.html"><li class="nav-item" id="service-page" style="color: white;">Сервис</li></a>
             <a href="aboutus.html"><li class="nav-item" id="aboutus-page">О нас</li></a>
           </ul>
         </div>
@@ -272,6 +321,7 @@
           </div>
         </div>
         <h3 class="copyright">©Spirit Motors. All right reserved</h3>
+        <h3 class="developer">Developed by Artem Logvinov</h3>
       </div>
     </div>
   </body>
