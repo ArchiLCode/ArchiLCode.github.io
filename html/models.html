@@ -15,6 +15,55 @@
     <title>Автосалон Spirit Motors</title>
   </head>
   <body>
+    <div class="login-window form-window">
+      <div class="login-body form-body">
+        <h1 class="form-title">Login</h1>
+        <button id="close-login-btn" class="close-btn">
+          <i class="fa-light fa-xmark"></i>
+        </button>
+        <form action="" class="form" id="login-form">
+          <div class="inputs">
+            <input type="email" name="email" class="email" placeholder="example@mail.ru" required autocomplete="email">
+            <div style="width: 100%; position: relative; margin-bottom: 20px;">
+              <input style="margin: 0;" type="password" name="password" class="password" placeholder="Пароль" required minlength="8" maxlength="50" autocomplete="current-password">
+              <button type="button" class="visible-password-btn">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+              </button>
+            </div>          
+          </div>
+          <button class="login-btn form-btn" type="submit">Войти</button>
+          <div class="another-form">
+            <p>Нет аккаунта? <span onclick="closeLoginForm(); openSingUpForm();" id="span-registr" style="color: var(--orange); cursor: pointer;">Регестрация</span></p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="singup-window form-window">
+      <div class="singup-body form-body">
+        <h1 class="form-title">Sing Up</h1>
+        <button id="close-singup-btn" class="close-btn">
+          <i class="fa-light fa-xmark"></i>
+        </button>
+        <form action="" class="form" id="singup-form">
+          <div class="inputs">
+            <input type="text" name="name" class="name" placeholder="Имя" required autocomplete="name" pattern="^[А-Яа-яЁё]+$">
+            <input type="tel" name="tel" class="telephone" placeholder="Телефон" required autocomplete="tel" minlength="11" maxlength="11" pattern="89+[0-9]{9}">
+            <input type="email" name="email" class="email" placeholder="example@mail.ru" required autocomplete="email">
+            <div style="width: 100%; position: relative; margin-bottom: 20px;">
+              <input style="margin: 0;" type="password" name="password" class="password" placeholder="Пароль" required minlength="8" maxlength="50" autocomplete="current-password">
+              <button type="button" class="visible-password-btn">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <button class="singup-btn form-btn" type="submit">Регистрация</button>
+          <div class="another-form">
+            <p>Есть аккаунт? <span onclick="closeSingUpForm(); openLoginForm();" id="span-login" style="color: var(--orange); cursor: pointer;">Войти</span></p>
+          </div>
+        </form>
+      </div>
+    </div>
     <div class="grid-container">
       <div id="header" class="grid-element">
         <div class="logo">
@@ -58,7 +107,7 @@
         <div id="burger-nav">
           <ul class="navigation-mobile">
             <a href="../index.html"><li class="nav-item" id="main-page">Главная</li></a>
-            <a href="models.html"><li class="nav-item" id="models-page">Новые авто</li></a>
+            <a href="models.html"><li class="nav-item" id="models-page" style="color: white;">Новые авто</li></a>
             <a href="cars.html"><li class="nav-item" id="cars-page">Авто с пробегом</li></a>
             <a href="service.html"><li class="nav-item" id="service-page">Сервис</li></a>
             <a href="aboutus.html"><li class="nav-item" id="aboutus-page">О нас</li></a>
@@ -71,7 +120,7 @@
 
           <!--BMW M5-->
 
-          <div class="models-element">
+          <div id="m5" class="models-element">
             <span class="category">Спорт</span>
             <img src="../img/new-cars/m5.png" alt=""  loading="lazy">
             <div class="model-name">
@@ -98,7 +147,7 @@
               <p>BMW M5 F90 - спортивный седан от BMW, выпещенный в 2017 году. Внешне автомобиль имеет спортивный и агрессивный дизайн, а внутри предлагает высокий уровень комфорта и технологий.
               </p>
             </div>
-            <button class="model-price">от 8 900 000 &#8381</button>
+            <button onclick="openOrderForm();" class="model-price">от 8 900 000 &#8381</button>
             <div class="model-buttons">
               <i class="fa-solid fa-heart"></i>
               <i class="fa-solid fa-cart-shopping"></i>
@@ -168,7 +217,7 @@
               </div>
             </div>
             <div class="model-description">
-              <p>Mercedes-Benz AMG GT I - спортивный автомобиль, который отличается своей элегантностью и мощью. Он выполнен в агрессивном дизайне, а также оснащен спортивной подвеской и широкими колесными арками, что делает его очень привлекательным внешне.
+              <p>Mercedes-Benz AMG GT I - спортивный автомобиль, который отличается своей элегантностью и мощью. Он выполнен в агрессивном дизайне, а также оснащен спортивной подвеской, что делает его очень привлекательным внешне.
               </p>
             </div>
             <button class="model-price">от 10 900 000 &#8381</button>
@@ -288,6 +337,24 @@
           </div>
         </div>
       </div>
+
+      <div class="order-window form-window">
+        <div class="order-body form-body">
+          <h1 class="order-title form-title">Заказ автомобиля</h1>
+          <button id="close-singup-btn" class="close-btn">
+            <i onclick="closeOrderForm();" class="fa-light fa-xmark"></i>
+          </button>
+          <form action="" class="form" id="order-form">
+            <div class="inputs">
+              <input type="text" name="name" class="name" placeholder="Имя" required autocomplete="name" pattern="^[А-Яа-яЁё]+$">
+              <input type="tel" name="tel" class="telephone" placeholder="Телефон" required autocomplete="tel" minlength="11" maxlength="11" pattern="89+[0-9]{9}">
+              <input type="email" name="email" class="email" placeholder="example@mail.ru" required autocomplete="email">
+            </div>
+            <button class="order-btn form-btn" type="submit">Заказать</button>
+          </form>
+        </div>
+      </div>
+
       <div id="footer" class="grid-element">
         <div class="footer-wrapper">
           <div class="about">
@@ -321,6 +388,7 @@
           </div>
         </div>
         <h3 class="copyright">©Spirit Motors. All right reserved</h3>
+        <h3 class="developer">Developed by Artem Logvinov</h3>
       </div>
     </div>
   </body>
