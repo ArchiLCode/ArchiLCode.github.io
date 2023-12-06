@@ -858,6 +858,11 @@ i {
   transition: transform 0.5s;
 }
 
+.order-body {
+  transform: translateY(200px);
+  transition: transform 0.5s;
+}
+
 .singup-body {
   transform: translateY(200px);
   transition: transform 0.5s;
@@ -945,4 +950,21 @@ i {
   .visible-password-btn {
     right: calc(20% - 15px);
   }
+}
+
+::-webkit-scrollbar {
+  width: 8px; /* ширина scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--backgrnd); /* цвет фона трека */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #666; /* цвет ползунка */
+  border-radius: 6px; /* скругление углов ползунка */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #444; /* цвет ползунка при наведении */
 }
