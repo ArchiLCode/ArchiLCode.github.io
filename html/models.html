@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/models.css" />
     <link rel="stylesheet" href="../css/icons.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="https://gistcdn.githack.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css">
@@ -147,7 +147,7 @@
               <p>BMW M5 F90 - спортивный седан от BMW, выпещенный в 2017 году. Внешне автомобиль имеет спортивный и агрессивный дизайн, а внутри предлагает высокий уровень комфорта и технологий.
               </p>
             </div>
-            <button onclick="openOrderForm();" class="model-price">от 8 900 000 &#8381</button>
+            <button onclick="openOrderForm('Выбранный автомобиль: BMW M5');" class="model-price">от 8 900 000 &#8381</button>
             <div class="model-buttons">
               <i class="fa-solid fa-heart"></i>
               <i class="fa-solid fa-cart-shopping"></i>
@@ -183,7 +183,7 @@
             <div class="model-description">
               <p>Audi RS6 C8 - это автомобиль для тех, кто ищет спортивные возможности и роскошь в одном пакете. Он предлагает высокую производительность и стильный дизайн, делая его привлекательным выбором для автолюбителей.</p>
             </div>
-            <button class="model-price">от 19 900 000 &#8381</button>
+            <button onclick="openOrderForm('Выбранный автомобиль: Audi RS6');" class="model-price">от 19 900 000 &#8381</button>
             <div class="model-buttons">
               <i class="fa-solid fa-heart"></i>
               <i class="fa-solid fa-cart-shopping"></i>
@@ -220,7 +220,7 @@
               <p>Mercedes-Benz AMG GT I - спортивный автомобиль, который отличается своей элегантностью и мощью. Он выполнен в агрессивном дизайне, а также оснащен спортивной подвеской, что делает его очень привлекательным внешне.
               </p>
             </div>
-            <button class="model-price">от 10 900 000 &#8381</button>
+            <button onclick="openOrderForm('Выбранный автомобиль: Mercedes-Benz AMG GT');" class="model-price">от 10 900 000 &#8381</button>
             <div class="model-buttons">
               <i class="fa-solid fa-heart"></i>
               <i class="fa-solid fa-cart-shopping"></i>
@@ -257,7 +257,7 @@
               <p>Porsche Cayenne III - это роскошный внедорожник, который сочетает в себе мощность и элегантность. Он имеет стильный дизайн с агрессивными линиями и просторный интерьер с высококачественными материалами.
               </p>
             </div>
-            <button class="model-price">от 6 900 000 &#8381</button>
+            <button onclick="openOrderForm('Выбранный автомобиль: Porsche Cayenne');" class="model-price">от 6 900 000 &#8381</button>
             <div class="model-buttons">
               <i class="fa-solid fa-heart"></i>
               <i class="fa-solid fa-cart-shopping"></i>
@@ -293,7 +293,7 @@
             <div class="model-description">
               <p>Audi Q5 Sportback - стильный компактный кроссовер, имеющий передовую систему полного привода, которая обеспечивает отличную управляемость и устойчивость на дороге при различных режимах езды.</p>
             </div>
-            <button class="model-price">от 5 900 000 &#8381</button>
+            <button onclick="openOrderForm('Выбранный автомобиль: Audi Q5');" class="model-price">от 5 900 000 &#8381</button>
             <div class="model-buttons">
               <i class="fa-solid fa-heart"></i>
               <i class="fa-solid fa-cart-shopping"></i>
@@ -329,7 +329,7 @@
               <p>Toyota Supra A90 - это спортивное автомобильное чудо, которое завоевало сердца автолюбителей по всему миру. Силуэт Supra A90 выглядит потрясающе благодаря своим изогнутым линиям и динамичной форме.
               </p>
             </div>
-            <button class="model-price">от 6 900 000 &#8381</button>
+            <button onclick="openOrderForm('Выбранный автомобиль: Toyota Surpa GR');" class="model-price">от 6 900 000 &#8381</button>
             <div class="model-buttons">
               <i class="fa-solid fa-heart"></i>
               <i class="fa-solid fa-cart-shopping"></i>
@@ -350,6 +350,7 @@
               <input type="tel" name="tel" class="telephone" placeholder="Телефон" required autocomplete="tel" minlength="11" maxlength="11" pattern="89+[0-9]{9}">
               <input type="email" name="email" class="email" placeholder="example@mail.ru" required autocomplete="email">
             </div>
+            <p id="selected-auto"></p>
             <button class="order-btn form-btn" type="submit">Заказать</button>
           </form>
         </div>
@@ -374,6 +375,7 @@
             </div>
             <div class="contacts">
               <a href="tel:88005553535"><i class="fa-solid fa-phone contacts-icon" aria-hidden="true"></i>8-800-55-35-35</a>
+              <a href="mailto:spirit@motors.ru"><i class="fa-solid fa-envelope contacts-icon" aria-hidden="true"></i>spirit@motors.ru</a>
               <a href="https://clck.ru/35hVHa" target="_blank"><i class="fa-solid fa-location-dot contacts-icon"></i>Москва, Мичуринский проспект 12к2</a>
             </div>
             <div class="footer-navigation">
@@ -388,7 +390,7 @@
           </div>
         </div>
         <h3 class="copyright">©Spirit Motors. All right reserved</h3>
-        <h3 class="developer">Developed by Artem Logvinov</h3>
+        <h3 class="developer">Developed by Логвинов Артём ИКБО-20-22</h3>
       </div>
     </div>
   </body>
