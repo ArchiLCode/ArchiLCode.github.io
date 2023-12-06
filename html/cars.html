@@ -175,7 +175,7 @@
             
             <h3 style="grid-area: mileage;">105 200 км</h3>
             <div class="car-buttons" style="grid-area: buttons;">
-              <button class="order-button">Заказать</button>
+              <button onclick="openOrderForm('Выбранный автомобиль: Audi A6');" class="order-button">Заказать</button>
               <i class="fa-solid fa-heart"></i>
               <i class="fa-solid fa-cart-shopping"></i>
             </div>
@@ -231,7 +231,7 @@
             
             <h3 style="grid-area: mileage;">101 270 км</h3>
             <div class="car-buttons" style="grid-area: buttons;">
-              <button class="order-button">Заказать</button>
+              <button onclick="openOrderForm('Выбранный автомобиль: Hyundai Solaris');" class="order-button">Заказать</button>
               <i class="fa-solid fa-heart"></i>
               <i class="fa-solid fa-cart-shopping"></i>
             </div>
@@ -291,7 +291,7 @@
             
             <h3 style="grid-area: mileage;">106 300 км</h3>
             <div class="car-buttons" style="grid-area: buttons;">
-              <button class="order-button">Заказать</button>
+              <button onclick="openOrderForm('Выбранный автомобиль: Mercedes-Benz C-Класс');" class="order-button">Заказать</button>
               <i class="fa-solid fa-heart"></i>
               <i class="fa-solid fa-cart-shopping"></i>
             </div>
@@ -345,7 +345,7 @@
             
             <h3 style="grid-area: mileage;">62 860 км</h3>
             <div class="car-buttons" style="grid-area: buttons;">
-              <button class="order-button">Заказать</button>
+              <button onclick="openOrderForm('Выбранный автомобиль: Daewoo Nexia');" class="order-button">Заказать</button>
               <i class="fa-solid fa-heart"></i>
               <i class="fa-solid fa-cart-shopping"></i>
             </div>
@@ -385,7 +385,7 @@
                   </div>
                   <div class="image-slider__slide swiper-slide">
                     <img class="image-slider__image" loading="lazy" src="../img/used-cars/infinity-fx37/infinity-fx37-8.jpg" alt="">
-                  </div>used-cars/
+                  </div>
                 </div>
               </div>
             </div>
@@ -407,7 +407,7 @@
             
             <h3 style="grid-area: mileage;">144 000 км</h3>
             <div class="car-buttons" style="grid-area: buttons;">
-              <button class="order-button">Заказать</button>
+              <button onclick="openOrderForm('Выбранный автомобиль: Infinity FX37');" class="order-button">Заказать</button>
               <i class="fa-solid fa-heart"></i>
               <i class="fa-solid fa-cart-shopping"></i>
             </div>
@@ -467,7 +467,7 @@
             
             <h3 style="grid-area: mileage;">72 000 км</h3>
             <div class="car-buttons" style="grid-area: buttons;">
-              <button class="order-button">Заказать</button>
+              <button onclick="openOrderForm('Выбранный автомобиль: ВАЗ 2106');" class="order-button">Заказать</button>
               <i class="fa-solid fa-heart"></i>
               <i class="fa-solid fa-cart-shopping"></i>
             </div>
@@ -475,6 +475,25 @@
 
         </div>
       </div>
+
+      <div class="order-window form-window">
+        <div class="order-body form-body">
+          <h1 class="order-title form-title">Заказ автомобиля</h1>
+          <button id="close-singup-btn" class="close-btn">
+            <i onclick="closeOrderForm();" class="fa-light fa-xmark"></i>
+          </button>
+          <form action="" class="form" id="order-form">
+            <div class="inputs">
+              <input type="text" name="name" class="name" placeholder="Имя" required autocomplete="name" pattern="^[А-Яа-яЁё]+$">
+              <input type="tel" name="tel" class="telephone" placeholder="Телефон" required autocomplete="tel" minlength="11" maxlength="11" pattern="89+[0-9]{9}">
+              <input type="email" name="email" class="email" placeholder="example@mail.ru" required autocomplete="email">
+            </div>
+            <p id="selected-auto"></p>
+            <button class="order-btn form-btn" type="submit">Заказать</button>
+          </form>
+        </div>
+      </div>
+
       <div id="footer" class="grid-element">
         <div class="footer-wrapper">
           <div class="about">
@@ -494,6 +513,7 @@
             </div>
             <div class="contacts">
               <a href="tel:88005553535"><i class="fa-solid fa-phone contacts-icon" aria-hidden="true"></i>8-800-55-35-35</a>
+              <a href="mailto:spirit@motors.ru"><i class="fa-solid fa-envelope contacts-icon" aria-hidden="true"></i>spirit@motors.ru</a>
               <a href="https://clck.ru/35hVHa" target="_blank"><i class="fa-solid fa-location-dot contacts-icon"></i>Москва, Мичуринский проспект 12к2</a>            </div>
             <div class="footer-navigation">
               <ul>
@@ -507,7 +527,7 @@
           </div>
         </div>
         <h3 class="copyright">©Spirit Motors. All right reserved</h3>
-        <h3 class="developer">Developed by Artem Logvinov</h3>
+        <h3 class="developer">Developed by Логвинов Артём ИКБО-20-22</h3>
       </div>
     </div>
   </body>
